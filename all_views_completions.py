@@ -48,7 +48,7 @@ class AllAutocomplete(sublime_plugin.EventListener):
         words = without_duplicates(words)
 
         matches = []
-        for w, v in words:
+        for w, v in words[0:settings.get("max_matches", 1000)]:
             trigger = w
             contents = w.replace('$', '\\$')
             if v.id != view.id and v.file_name():
