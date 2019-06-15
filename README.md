@@ -33,7 +33,8 @@ Example: the following Setting would disable completions when you're editing CSS
   "markdown"
 ],
 "min_word_size": 5, // don't show completions for words with fewer than this many chars
-"max_word_size": 40 // don't show completions for words with more than this many chars
+"max_word_size": 40, // don't show completions for words with more than this many chars
+"max_matches": 1000, // don't include more than this many completions
 ```
 
 The names provided in this list are matched against the so-called "syntax scope" of the currently autocompleted input. For example, in a CSS file, when you start typing a new CSS class name, the syntax scope is "source.css meta.selector.css". The names you provide in the config above are partially matched against this scope. This means, you can completely disable All Autocomplete for all CSS code by specifying "css" – or you can disable it only for specific parts, for example, CSS selectors by specifying "selector.css". Or to disable completion in comments, include "comment" in the list.
